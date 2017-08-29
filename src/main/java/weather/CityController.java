@@ -13,7 +13,6 @@ public class CityController {
     public List<String> getCities() {
         ApplicationContext context = new AnnotationConfigApplicationContext(City.class);
         City city = context.getBean(City.class);
-        System.out.println("---- getCities ---- "+city.getCities().toString());
         return city.getCities();
     }
 
