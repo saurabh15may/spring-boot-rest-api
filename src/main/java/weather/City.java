@@ -1,30 +1,23 @@
 package weather;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.stereotype.Component;
+ public class City{
 
-import java.util.List;
+ String id;
+ String name;
 
+ public String getId() {
+ return id;
+ }
 
-@Configuration
-@PropertySource(value="classpath:application.properties")
-public class City {
+ public void setId(String id) {
+ this.id = id;
+ }
 
-    @Value("#{'${city.names}'.split(',')}")
-    private List<String> cities;
+ public String getName() {
+ return name;
+ }
 
-
-    public List<String> getCities() {
-        return cities;
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
-
-}
+ public void setName(String name) {
+ this.name = name;
+ }
+ }
